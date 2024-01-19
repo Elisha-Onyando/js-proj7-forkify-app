@@ -9,11 +9,6 @@ import addRecipeView from './views/addRecipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-
-// if (module.hot) {
-//     module.hot.accept();
-// }
-
 const controlRecipes = async function () {
     try {
         const recipeId = window.location.hash.slice(1);
@@ -69,8 +64,6 @@ const controlServings = function (newServings) {
     //Update the recipe servings
     model.updateServings(newServings);
     //Update the recipe view
-    // 2. Rendering the recipe
-    //recipeView.render(model.state.recipe);
     recipeView.update(model.state.recipe);
 };
 
@@ -99,7 +92,6 @@ const controlAddRecipe = async function (newRecipe) {
         addRecipeView.renderSpinner();
         //Upload the new recipe data
         await model.uploadRecipe(newRecipe);
-        //console.log(model.state.recipe);
 
         //Render recipe 
         recipeView.render(model.state.recipe);
@@ -118,12 +110,10 @@ const controlAddRecipe = async function (newRecipe) {
             addRecipeView.toggleWindow();
         }, 2500);
     } catch (err) {
-        console.error(err);
         addRecipeView.renderError(err.message);
     }
 
 }
-
 
 const init = function () {
     bookmarksView.addHandlerRender(controlBookmarks);
@@ -135,5 +125,4 @@ const init = function () {
     addRecipeView.addHandlerUpload(controlAddRecipe);
 
 };
-
 init();
