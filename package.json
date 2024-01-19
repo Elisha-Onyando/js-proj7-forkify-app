@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe Application-Learning Modern JS",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Elisha Onyando",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "core-js": "^3.35.0",
+    "fractional": "^1.0.0",
+    "fracty": "^1.0.11",
+    "regenerator-runtime": "^0.14.1",
+    "sass": "^1.69.7"
+  }
+}
